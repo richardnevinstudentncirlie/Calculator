@@ -1,17 +1,4 @@
 describe("My Calculate", function() {
-
-    it("should convert imperial weight to metric", function() {
-	
-        expect(Calculate.convertFromPoundsToKIlo(2.2)).toBe(1);
-		
-    });
-	
-    it("should be able to deal with strings", function(){
-	
-        expect(function() {Calculate.convertFromPoundsToKIlo("hello")}).toThrow(new Error("Not a number"))
-		
-    });
-	
 	
 	it("Addition", function() {
 	
@@ -57,12 +44,18 @@ describe("My Calculate", function() {
 		
     });
 	
+	it("Division by zero", function(){
+	
+        expect(function() {Calculate.calcDiv(2,0)}).toThrow(new Error("Invalid Value Given"))
+		
+    });
+	
 	
 	it("Division with invalid value", function(){
 	
         expect(function() {Calculate.calcSub("hello", "hello")}).toThrow(new Error("Invalid Value Given"))
 		
     });
-
+		
 	
 })

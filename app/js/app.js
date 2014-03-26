@@ -7,23 +7,27 @@
 		var operationValue = $("#operationinput").val();
 
 		$("#resultoutput").val('');
-		
-		switch(operationValue) {
-			case "+":
-				$("#resultoutput").val(Calculate.calcAdd(firstValue,secondValue));
-				break
-			case "-":
-				$("#resultoutput").val(Calculate.calcSub(firstValue,secondValue));
-				break
-			case "*":
-				$("#resultoutput").val(Calculate.calcMul(firstValue,secondValue));
-				break
-			case "/":
-				$("#resultoutput").val(Calculate.calcDiv(firstValue,secondValue));
-				break
-			default:
-				alert("Invalid Operation")
-		}		
+		try {
+			switch(operationValue) {
+				case "+":
+					$("#resultoutput").val(Calculate.calcAdd(firstValue,secondValue));
+					break
+				case "-":
+					$("#resultoutput").val(Calculate.calcSub(firstValue,secondValue));
+					break
+				case "*":
+					$("#resultoutput").val(Calculate.calcMul(firstValue,secondValue));
+					break
+				case "/":
+					$("#resultoutput").val(Calculate.calcDiv(firstValue,secondValue));
+					break
+				default:
+					alert("Invalid Operation")
+			}
+		}
+		catch(err) {
+			alert("Invalid Operation")
+		}
 		
     });
 	
