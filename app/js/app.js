@@ -1,23 +1,37 @@
 ﻿$(document).ready(function() {
-    $("#convertbutton").click(function() {
-        var metricValue = $("#metricinput").val();
-        var imperialValue = $("#imperialinput").val();
 
+    $("#calculatebutton").click(function() {
+ 
+		var firstValue = $("#firstinput").val();
+        var secondValue = $("#secondinput").val();
+		var operationValue = $("#operationinput").val();
 
-        if (((metricValue.length !=0) && (imperialValue.length !=0))
-            || ((metricValue.length == 0) && imperialValue.length == 0)) {
-            alert("Please set one field to convert")
-        }
-        if (metricValue.length != 0) {
-            $("#imperialinput").val(Converter.convertFromPoundsToKIlo(metricValue));
-        }
-        else if (imperialValue.length != 0) {
-            $("#metricinput").val(Converter.convertFromMetricToImperial(imperialValue));
-        }
+		$("#resultoutput").val('');
+		
+		switch(operationValue) {
+			case "+":
+				$("#resultoutput").val(Calculate.calcAdd(firstValue,secondValue));
+				break
+			case "-":
+				$("#resultoutput").val(Calculate.calcSub(firstValue,secondValue));
+				break
+			case "*":
+				$("#resultoutput").val(Calculate.calcMul(firstValue,secondValue));
+				break
+			case "/":
+				$("#resultoutput").val(Calculate.calcDiv(firstValue,secondValue));
+				break
+			default:
+				alert("Invalid Operation")
+		}		
+		
     });
+	
     $("#clearbutton").click(function() {
-        $("#imperialinput").val('');
-        $("#metricinput").val('');
+        $("#firstinput").val('');
+        $("#secondinput").val('');
+		$("#operationinput").val('');
+		$("#resultoutput").val('');
     });
 
 });

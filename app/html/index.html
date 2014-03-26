@@ -8,7 +8,7 @@
 		<script src="../js/jquery-1.10.2.min.js" type="text/javascript">></script>
 	    <script src="../js/_skel_config.js" type="text/javascript"></script>
 		<script src="../js/skel.min.js"></script>
-        <script src="../js/Converter.js" language="JavaScript" type="text/javascript"></script>
+        <script src="../js/Calculate.js" language="JavaScript" type="text/javascript"></script>
         <script src="../js/app.js" language="JavaScript" type="text/javascript"></script>
 	</head>
 	<body>
@@ -16,27 +16,38 @@
 			<!-- Header -->
 				<div id="header" class="row">
 					<div class="4u">
-						<h1>The Converter</h1>
+						<h1>Calculator</h1>
 					</div>
 
 				</div>
 			<!-- Hero -->
 				<section id="hero">
-
-
-					<button class="button" id="convertbutton">Do The Convert</button>
+				
+					<button class="button" id="calculatebutton">Do The Calculation</button>
                     <button class="button" id="clearbutton">Clear</button>
+					
 				</section>
 			<!-- Features -->
 				<div class="row">
+				
 					<div class="-2u 4u">
-						<h2>Metric</h2>
-						<input class="" type="number" id="metricinput"/>
+						<h2>First Value</h2>
+						<input class="" type="number" id="firstinput"/>
+					</div>
+					
+					<div class="-2u 4u">
+						<h2>Operation</h2>
+						<input class="" type="string" id="operationinput"/>
 					</div>
 
                     <div class="-2u 4u">
-						<h2>Imperial</h2>
-						<input type="number" id="imperialinput"/>
+						<h2>Second Value</h2>
+						<input type="number" id="secondinput"/>
+					</div>
+					
+					<div class="-2u 4u">
+						<h2>Result Value</h2>
+						<input type="number" id="resultoutput"/>
 					</div>
 
 				</div>
