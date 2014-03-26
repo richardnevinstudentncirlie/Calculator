@@ -37,5 +37,19 @@
 		$("#operationinput").val('');
 		$("#resultoutput").val('');
     });
+	
+	$("#xxx").click(function() {
+		var now = new Date()
+		var theHour = now.getHours()
+		var theMin = now.getMinutes()
+		var theTime = "" + ((theHour > 12) ? theHour - 12 : theHour)
+		theTime += ((theMin < 10) ? ":0" : ":") + theMin
+		theTime  += (theHour >= 12) ? " pm" : " am"
+		theTime += ((flasher) ? " " : "*")
+		flasher = !flasher
+		window.status = theTime
+		// recursively call this function every second to keep timer going
+		timerID = setTimeout("updateTime()",1000)
+    });
 
 });

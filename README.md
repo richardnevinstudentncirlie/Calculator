@@ -70,9 +70,3 @@ git push heroku master
 
 10.
 http://mighty-cove-2855.herokuapp.com/
-
-11.
-git commit -a -m "Description of change"
-git push origin master
-git push heroku master
-http://desolate-mesa-9336.herokuapp.com/
